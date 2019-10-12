@@ -1,7 +1,6 @@
 import React from 'react';
-import { Router, Redirect, Switch, Route } from 'react-router';
+import { Redirect, Switch, Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
-import { NavigationBar } from './components/navbar/NavigationBar';
 import { SignupWizard } from './pages/signup/SignupWizard';
 import { DonationPage } from './pages/donor/donation/DonationPage';
 import { Dashboard as StudentDashboard } from './pages/student/dashboard/Dashboard';
@@ -11,6 +10,8 @@ import { UserCategoryStep } from './pages/signup/steps/UserCategoryStep';
 import './App.css';
 import { TopBar } from './components/top-bar/TopBar';
 import { GetMap } from './pages/student/map/map';
+import { PaymentPage } from './pages/payment/PaymentPage';
+import { PaymentSuccessPage } from './pages/payment/PaymentSuccessPage';
 
 const steps = [
   {
@@ -41,6 +42,14 @@ const App: React.FC = () => {
 
         <Route path="/donor/donate">
           <DonationPage />
+        </Route>
+        
+        <Route path="/donor/payment">
+          <PaymentPage />
+        </Route>
+
+        <Route path="/donor/success">
+          <PaymentSuccessPage />
         </Route>
 
         <Route path="/student" exact={true}>
