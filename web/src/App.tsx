@@ -1,14 +1,14 @@
 import React from 'react';
 import { Router, Redirect, Switch, Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
-import './App.css';
 import { NavigationBar } from './components/navbar/NavigationBar';
 import { SignupWizard } from './pages/signup/SignupWizard';
-import UserCategoryStep from './pages/signup/steps/UserCategory';
 import { DonationPage } from './pages/donor/donation/DonationPage';
 import { Dashboard as StudentDashboard } from './pages/student/dashboard/Dashboard';
 import { Dashboard as DonorDashboard } from './pages/donor/dashboard/Dashboard';
 import { VendorsPage } from './pages/student/vendors/VendorsPage';
+import { UserCategoryStep } from './pages/signup/steps/UserCategoryStep';
+import './App.css';
 
 const steps = [
   {
@@ -20,10 +20,6 @@ const steps = [
     element: <UserCategoryStep />
   }
 ]
-
-const getStep = (n: number) => {
-  return steps[n] || 'Whoops!?';
-}
 
 const App: React.FC = () => {
   return (
