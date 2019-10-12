@@ -19,7 +19,7 @@ const steps = [
     element: <UserCategoryStep />
   },
   {
-    label: 'Foo Bar',
+    label: 'Finished',
     element: <UserCategoryStep />
   }
 ]
@@ -29,7 +29,7 @@ const App: React.FC = () => {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact={true}>
-          <Redirect to="/signup" />
+          <Redirect to="/student" />
         </Route>
 
         <Route path="/signup">
