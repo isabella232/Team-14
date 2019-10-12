@@ -9,6 +9,7 @@ import { VendorsPage } from './pages/student/vendors/VendorsPage';
 import { UserCategoryStep } from './pages/signup/steps/UserCategoryStep';
 import './App.css';
 import { TopBar } from './components/top-bar/TopBar';
+import { GetMap } from './pages/student/map/map';
 import { PaymentPage } from './pages/payment/PaymentPage';
 import { PaymentSuccessPage } from './pages/payment/PaymentSuccessPage';
 
@@ -36,7 +37,7 @@ const App: React.FC = () => {
         </Route>
 
         <Route path="/donor" exact={true}>
-          <DonorDashboard />
+          <DonationPage />
         </Route>
 
         <Route path="/donor/donate">
@@ -54,6 +55,10 @@ const App: React.FC = () => {
         <Route path="/student" exact={true}>
           <TopBar title="Student Dashboard"/>
           <StudentDashboard />
+        </Route>
+        
+        <Route path="/student/map" exact={true}>
+          <GetMap />
         </Route>
 
         <Route path="/student/vendors">
