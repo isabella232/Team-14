@@ -36,23 +36,19 @@ const App: React.FC = () => {
 
         <Route path="/donor" exact={true}>
           <DonorDashboard />
-          <NavigationBar></NavigationBar>
         </Route>
 
         <Route path="/donor/donate">
           <DonationPage />
-          <NavigationBar></NavigationBar>
         </Route>
 
         <Route path="/student" exact={true}>
           <TopBar title="Student Dashboard"/>
           <StudentDashboard />
-          <NavigationBar></NavigationBar>
         </Route>
 
         <Route path="/student/vendors">
           <VendorsPage />
-          <NavigationBar></NavigationBar>
         </Route>
       </Switch>
     </BrowserRouter>
