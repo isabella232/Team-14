@@ -5,6 +5,9 @@ import './App.css';
 import { NavigationBar } from './components/navbar/NavigationBar';
 import { SignupWizard } from './pages/signup/SignupWizard';
 import UserCategoryStep from './pages/signup/steps/UserCategory';
+import { DonationPage } from './pages/donor/donation/DonationPage';
+import { Dashboard as StudentDashboard } from './pages/student/dashboard/Dashboard';
+import { Dashboard as DonorDashboard } from './pages/donor/dashboard/Dashboard';
 
 const steps = [
   {
@@ -25,17 +28,32 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/about">
-          <NavigationBar></NavigationBar>
+        <Route path="/" exact={true}>
+          <Redirect to="/signup" />
         </Route>
-        <Route path="/users">
-          <NavigationBar></NavigationBar>
-        </Route>
+
         <Route path="/signup">
           <SignupWizard steps={steps} />
         </Route>
-        <Route path="/">
-          <Redirect to="/signup"/>
+
+        <Route path="/donor" exact={true}>
+          <DonorDashboard />
+          <NavigationBar></NavigationBar>
+        </Route>
+
+        <Route path="/donor/donate">
+          <DonationPage />
+          <NavigationBar></NavigationBar>
+        </Route>
+
+        <Route path="/student" exact={true}>
+          <StudentDashboard />
+          <NavigationBar></NavigationBar>
+        </Route>
+
+        <Route path="/student/vendors">
+          <DonationPage />
+          <NavigationBar></NavigationBar>
         </Route>
       </Switch>
     </BrowserRouter>

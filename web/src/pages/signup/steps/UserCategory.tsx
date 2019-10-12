@@ -10,7 +10,7 @@ const images = [
     width: '50%',
   },
   {
-    url: '/static/images/grid-list/burgers.jpg',
+    url: '/static/img/.jpg',
     title: 'Donor',
     width: '50%',
   },
@@ -29,7 +29,6 @@ const useStyles = makeStyles((theme: Theme) =>
       height: 200,
       [theme.breakpoints.down('xs')]: {
         width: '100% !important', // Overrides inline-style
-        height: 100,
       },
       '&:hover, &$focusVisible': {
         zIndex: 1,
