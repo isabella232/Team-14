@@ -9,6 +9,8 @@ import FormLabel from '@material-ui/core/FormLabel';
 import TextField from '@material-ui/core/TextField';
 import ToggleButton from '@material-ui/lab/ToggleButton';
 
+
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     formControl: {
@@ -47,7 +49,6 @@ export function DonationPage() {
       <p>The meal average cost in Chicago is $10</p>
       <p>How many meals do you want to donate?</p>
       <TextField> </TextField>
-      <ToggleButton></ToggleButton>
     </>
   );
 }
