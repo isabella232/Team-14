@@ -8,6 +8,7 @@ import UserCategoryStep from './pages/signup/steps/UserCategory';
 import { DonationPage } from './pages/donor/donation/DonationPage';
 import { Dashboard as StudentDashboard } from './pages/student/dashboard/Dashboard';
 import { Dashboard as DonorDashboard } from './pages/donor/dashboard/Dashboard';
+import { VendorsPage } from './pages/student/vendors/VendorsPage';
 
 const steps = [
   {
@@ -52,7 +53,7 @@ const App: React.FC = () => {
         </Route>
 
         <Route path="/student/vendors">
-          <DonationPage />
+          <VendorsPage />
           <NavigationBar></NavigationBar>
         </Route>
       </Switch>
