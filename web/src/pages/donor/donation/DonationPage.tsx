@@ -25,25 +25,19 @@ export function DonationPage() {
 
   return (
     <>
-      <p>SOME TEXT SHOULD GO HERE BRO</p>
+      <p>Do you want to donate to your school?</p>
 
       <FormControl component="fieldset" className={classes.formControl}>
-        <FormLabel component="legend">Gender</FormLabel>
-        <RadioGroup aria-label="gender" name="gender2" value={value} onChange={handleChange}>
+        <RadioGroup aria-label="yes" name="no" value={value} onChange={handleChange}>
           <FormControlLabel
-            value="female"
+            value="Yes"
             control={<Radio color="primary" />}
-            label="Female"
+            label="Yes"
           />
           <FormControlLabel
-            value="male"
+            value="No"
             control={<Radio color="primary" />}
-            label="Male"
-          />
-          <FormControlLabel
-            value="other"
-            control={<Radio color="primary" />}
-            label="Other"
+            label="No"
           />
         </RadioGroup>
         <FormHelperText>labelPlacement start</FormHelperText>
