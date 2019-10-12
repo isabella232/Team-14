@@ -9,6 +9,7 @@ import { Dashboard as DonorDashboard } from './pages/donor/dashboard/Dashboard';
 import { VendorsPage } from './pages/student/vendors/VendorsPage';
 import { UserCategoryStep } from './pages/signup/steps/UserCategoryStep';
 import './App.css';
+import { TopBar } from './components/top-bar/TopBar';
 
 const steps = [
   {
@@ -44,6 +45,7 @@ const App: React.FC = () => {
         </Route>
 
         <Route path="/student" exact={true}>
+          <TopBar title="Student Dashboard"/>
           <StudentDashboard />
           <NavigationBar></NavigationBar>
         </Route>
