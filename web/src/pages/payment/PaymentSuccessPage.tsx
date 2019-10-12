@@ -6,7 +6,7 @@ import { useHistory } from 'react-router';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     check: {
-      padding: 100,
+      padding: 60,
       borderRadius: '100%',
       backgroundColor: 'green',
       color: 'white',
