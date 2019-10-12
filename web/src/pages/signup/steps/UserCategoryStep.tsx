@@ -6,33 +6,18 @@ import { FancyRadioButtons } from "../../../components/fancy-radio-buttons/Fancy
 
 const images = [
   {
-    url: '/static/img/BlueApron.jpg',
-    title: 'Blue Apron',
+    url: '/static/img/category-student.jpg',
+    title: 'Student',
     width: '50%',
   },
   {
-    url: '/static/img/HelloFresh.jpg',
-    title: 'Hello Fresh',
-    width: '50%',
-  },
-  {
-    url: '/static/img/PurpleCarrot.jpg',
-    title: 'Purple Carrot',
-    width: '50%',
-  },
-  {
-    url: '/static/img/Freshly.jpg',
-    title: 'Freshly',
-    width: '50%',
-  },
-  {
-    url: '/static/img/SunBasket.jpg',
-    title: 'Sun Basket',
+    url: '/static/img/donor.png',
+    title: 'Donor',
     width: '50%',
   },
 ];
 
-export function VendorsPage() {
+export function UserCategoryStep() {
   return (
     <>
       <FancyRadioButtons items={images} />
