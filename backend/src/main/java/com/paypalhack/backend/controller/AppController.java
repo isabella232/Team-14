@@ -44,7 +44,7 @@ public class AppController {
         String value = dao.getStudentMealsLeft(student);
         return value;
     }
-
+	
 	
 	
 }

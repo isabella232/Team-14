@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.ResultSet;
 
+
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.beans.factory.annotation.Value;
@@ -92,15 +93,17 @@ public class DataAccessObject {
 			getMealsSQL = getMealsSQL + Integer.toString(student.getStudentId()) + ";";
 			PreparedStatement st = conn.prepareStatement(getMealsSQL);
 	        ResultSet rs = st.executeQuery();
+	        System.out.println(rs.toString());
 		    while (rs.next()) {
 		        mealsLeft = rs.getInt(1);
 		        System.out.println(mealsLeft);
 		        mealsredeemed = rs.getInt(2);
+		        System.out.println(mealsredeemed);
 		        ((ObjectNode) childNode1).put("mealsLeft", mealsLeft);
-				((ObjectNode) childNode1).put("mealsredeemed", mealsredeemed);
+				((ObjectNode) childNode1).put("mealsRedeemed", mealsredeemed);
+				System.out.println(childNode1.toString());
 				}
-		    jsonString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(rootNode);
-		    return jsonString;
+		    jsonString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(childNode1);
 			} catch(SQLException e) {
 				e.printStackTrace();
 			}catch (JsonProcessingException e) {
@@ -109,5 +112,7 @@ public class DataAccessObject {
 			}
 		return jsonString;
 	}
+	
+	
 
 }
