@@ -88,12 +88,13 @@ public class DataAccessObject {
 			JsonNode rootNode = mapper.createObjectNode();
 			JsonNode childNode1 = mapper.createObjectNode();
 			Connection conn = createConnection();
-			String getMealsSQL = "SELECT mealsleft, mealsredeemed FROM public.student where id = ?;";
+			String getMealsSQL = "SELECT mealsleft, mealsredeemed FROM public.student where id = ";
+			getMealsSQL = getMealsSQL + Integer.toString(student.getStudentId()) + ";";
 			PreparedStatement st = conn.prepareStatement(getMealsSQL);
-			st.setInt(1, student.getStudentId());
-	        ResultSet rs = st.executeQuery(getMealsSQL);
-		    if (rs.next()) {
+	        ResultSet rs = st.executeQuery();
+		    while (rs.next()) {
 		        mealsLeft = rs.getInt(1);
+		        System.out.println(mealsLeft);
 		        mealsredeemed = rs.getInt(2);
 		        ((ObjectNode) childNode1).put("mealsLeft", mealsLeft);
 				((ObjectNode) childNode1).put("mealsredeemed", mealsredeemed);
