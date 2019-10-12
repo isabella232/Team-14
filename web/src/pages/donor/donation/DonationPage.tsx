@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -8,7 +8,8 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import TextField from '@material-ui/core/TextField';
 import ToggleButton from '@material-ui/lab';
-
+import { Button } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -20,51 +21,54 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export function DonationPage() {
   const classes = useStyles();
-  const [value, setValue] = React.useState('female');
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue((event.target as HTMLInputElement).value);
-  };
+  const history = useHistory();
+  const [enableAlmaMater, setEnabledAlmaMater] = useState(null as boolean | null);
+  const [cycleKind, setCycleKind] = useState(null as string | null);
 
   return (
     <>
       <p>Do you want to donate to your school?</p>
-
-      <FormControl component="fieldset" className={classes.formControl}>
-        <RadioGroup aria-label="yes" name="no" value={value} onChange={handleChange}>
+      <FormControl name="donate-school-group" component="fieldset" className={classes.formControl}>
+        <RadioGroup aria-label="yes" name="donate-school" value={enableAlmaMater} onChange={(e) => setEnabledAlmaMater((e.target as HTMLInputElement).value === "true")}>
           <FormControlLabel
-            value="Yes"
+            value="true"
             control={<Radio color="primary" />}
             label="Yes"
           />
           <FormControlLabel
-            value="No"
+            value="false"
             control={<Radio color="primary" />}
             label="No"
           />
         </RadioGroup>
-        <FormHelperText>labelPlacement start</FormHelperText>
       </FormControl>
       <p>The meal average cost in Chicago is $10</p>
       <p>How many meals do you want to donate?</p>
       <TextField> </TextField>
 
       <p>How would you like to donate?</p>
-      <FormControl component="fieldset" className={classes.formControl}>
-      <RadioGroup aria-label="Recuring" name="One-time" value={value} onChange={handleChange}>
+      <FormControl name="donate-cycle-group" component="fieldset" className={classes.formControl}>
+        <RadioGroup aria-label="Recuring" name="donate-cycle" value={cycleKind} onChange={(e) => setCycleKind((e.target as HTMLInputElement).value)}>
           <FormControlLabel
-            value="Recuring"
+            value="recurring"
             control={<Radio color="primary" />}
-            label="Recuring"
+            label="Recurring"
           />
           <FormControlLabel
-            value="One-time"
+            value="single"
             control={<Radio color="primary" />}
             label="One-time"
           />
         </RadioGroup>
-        <FormHelperText>labelPlacement start</FormHelperText>
-        </FormControl>
+      </FormControl>
+
+      <div>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={(e) => history.push("/donor/payment")}>Donate Now!
+        </Button>
+      </div>
     </>
   );
 }
