@@ -11,7 +11,7 @@ const images = [
     width: '50%',
   },
   {
-    url: '/static/img/.jpg',
+    url: '/static/img/donor.png',
     title: 'Donor',
     width: '50%',
   },

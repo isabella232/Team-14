@@ -1,0 +1,21 @@
+CREATE TABLE donor(
+id serial not null primary key,
+name varchar(40) not null,
+email varchar(50) not null,
+college varchar(100) not null, 
+client_id varchar(100), 
+recurring bool
+);
+
+CREATE TABLE student(
+id serial not null primary key, 
+name varchar(40), 
+email varchar(40),
+school varchar(100),
+fafsaid varchar(15),
+city varchar(40),
+mealsleft smallint default 0,
+weeklymealsneeded smallint default 0,
+mealsredeemed smallint default 0, 
+thankyoumsg varchar(200), 
+);

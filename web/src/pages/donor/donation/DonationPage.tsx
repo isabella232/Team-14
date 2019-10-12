@@ -7,8 +7,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import TextField from '@material-ui/core/TextField';
-import ToggleButton from '@material-ui/lab/ToggleButton';
-
+import ToggleButton from '@material-ui/lab';
 
 
 const useStyles = makeStyles((theme: Theme) =>
