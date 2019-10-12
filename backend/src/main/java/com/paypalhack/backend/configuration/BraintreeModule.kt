@@ -14,7 +14,7 @@ open class BraintreeModule {
     open fun createGateway(props: BraintreeProperties) =
             BraintreeGateway(
                     Environment.SANDBOX,
-                    props.marchantId,
+                    props.merchantId,
                     props.publicKey,
                     props.privateKey
             )
