@@ -7,3 +7,5 @@
 ## Team Members
 
  - Josh Bowden (CS - 4th Year)
+ - Max Buffo (CS - 2nd Year)
+ - S M Zawad Bin Zaki Sadaf (CS - 2nd Year)
