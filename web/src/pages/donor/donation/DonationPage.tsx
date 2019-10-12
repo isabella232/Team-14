@@ -7,6 +7,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import TextField from '@material-ui/core/TextField';
+import ToggleButton from '@material-ui/lab/ToggleButton';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -43,9 +44,10 @@ export function DonationPage() {
         </RadioGroup>
         <FormHelperText>labelPlacement start</FormHelperText>
       </FormControl>
-      <p>The average cost in Chicago is $10</p>
+      <p>The meal average cost in Chicago is $10</p>
       <p>How many meals do you want to donate?</p>
       <TextField> </TextField>
+      <ToggleButton></ToggleButton>
     </>
   );
 }
