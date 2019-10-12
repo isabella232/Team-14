@@ -49,17 +49,17 @@ export function Dashboard() {
      <h2 className={classes.header}>
        Meals Balance:
       </h2>
-       <h2 className={classes.header}>
-       xxx meals
-       </h2>
+       <h3 className={classes.header}>
+       2 meals
+       </h3>
        </Grid>
       <Grid item xs={12}>
       <h2 className={classes.header}>
        Meals Redeemed To Date:
        </h2>
-       <h2 className={classes.header}>
-       xxx meals
-       </h2>
+       <h3 className={classes.header}>
+       16 meals
+       </h3>
        </Grid>
 </Grid>
   );
