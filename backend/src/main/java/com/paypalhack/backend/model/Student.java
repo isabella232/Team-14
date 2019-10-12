@@ -6,14 +6,18 @@ public class Student{
 	private String name;
     private String email;
     private String fafsaid;
-	private String weeklyMealsNeeded;
+	private int weeklyMealsNeeded;
     private String school;
     private int mealsLeft;
+    private String city;
     private int mealsRedeemed;
     private String thankYouMsg;
     
+    public Student() {
+    	
+    }
 
-    public Student(int studentId, String name, String email, String fafsaid, String weeklyMealsNeeded, String school, String thankYouMsg) {
+    public Student(int studentId, String name, String email, String fafsaid, String city,int weeklyMealsNeeded, String school, String thankYouMsg) {
         this.studentId = studentId;
         this.name = name;
         this.email = email;
@@ -51,6 +55,14 @@ public class Student{
     public void setEmail(String email) {
         this.email = email;
     }
+    
+    public String getCity() {
+        return this.city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
 
     public String getFafsaid() {
         return this.fafsaid;
@@ -60,11 +72,11 @@ public class Student{
         this.fafsaid = fafsaid;
     }
 
-    public String getWeeklyMealsNeeded() {
+    public int getWeeklyMealsNeeded() {
         return this.weeklyMealsNeeded;
     }
 
-    public void setWeeklyMealsNeeded(String weeklyMealsNeeded) {
+    public void setWeeklyMealsNeeded(int weeklyMealsNeeded) {
         this.weeklyMealsNeeded = weeklyMealsNeeded;
     }
 
