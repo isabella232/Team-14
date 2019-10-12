@@ -12,10 +12,11 @@ import { TopBar } from './components/top-bar/TopBar';
 import { GetMap } from './pages/student/map/map';
 import { PaymentPage } from './pages/payment/PaymentPage';
 import { PaymentSuccessPage } from './pages/payment/PaymentSuccessPage';
+import { HelloStep } from './pages/signup/steps/HelloStep';
 
 const steps = [
   {
-    label: 'Category',
+    label: 'Welcome!',
     element: <UserCategoryStep />
   },
   {
