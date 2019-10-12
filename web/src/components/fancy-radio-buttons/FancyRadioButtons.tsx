@@ -1,20 +1,5 @@
 import React from "react";
-import { Theme, makeStyles, createStyles } from '@material-ui/core/styles';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Typography from '@material-ui/core/Typography';
-
-const images = [
-  {
-    url: '/static/img/category-student.jpg',
-    title: 'Student',
-    width: '50%',
-  },
-  {
-    url: '/static/img/.jpg',
-    title: 'Donor',
-    width: '50%',
-  },
-];
+import { makeStyles, Theme, createStyles, ButtonBase, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -90,25 +75,22 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function UserCategoryStep() {
+export function FancyRadioButtons({ items }: { items: Array<{ title: string, url: string }> }) {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      {images.map(image => (
+      {items.map(x => (
         <ButtonBase
           focusRipple
-          key={image.title}
+          key={x.title}
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}
-          style={{
-            width: image.width,
-          }}
         >
           <span
             className={classes.imageSrc}
             style={{
-              backgroundImage: `url(${image.url})`,
+              backgroundImage: `url(${x.url})`,
             }}
           />
           <span className={classes.imageBackdrop} />
@@ -119,7 +101,7 @@ export default function UserCategoryStep() {
               color="inherit"
               className={classes.imageTitle}
             >
-              {image.title}
+              {x.title}
               <span className={classes.imageMarked} />
             </Typography>
           </span>
