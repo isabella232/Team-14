@@ -38,14 +38,16 @@ const App: React.FC = () => {
         </Route>
 
         <Route path="/donor" exact={true}>
-          <DonationPage />
+          <Redirect to="/donor/donate" />
         </Route>
 
         <Route path="/donor/donate">
+          <TopBar title="Donations" />
           <DonationPage />
         </Route>
         
         <Route path="/donor/payment">
+          <TopBar title="Sending Donation" />
           <PaymentPage />
         </Route>
 

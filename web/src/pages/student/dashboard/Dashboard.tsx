@@ -18,7 +18,17 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center'
   },
   header: {
-    paddingTop: theme.spacing(2)
+    marginBlockStart: '0.1em',
+    paddingTop: theme.spacing(2),
+    paddingBottom: 0,
+  },
+  subheader: {
+    paddingTop: 0,
+    paddingBottom: '1em',
+    marginBlockEnd: '0.1em',
+  },
+  callout: {
+    padding: theme.spacing(1),
   }
 }));
 export function Dashboard() {
@@ -35,10 +45,35 @@ export function Dashboard() {
 
   return (
     <Grid className={classes.center} container={true}>
+      <Grid xs={12} style={{ marginBlockStart: '0.75em', display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
+        <img src="/static/img/Logo.png" width="56" height="56" /><h2 style={{ display: 'inline', paddingLeft: '0.2em', fontFamily: "'Bree Serif', serif"}}>USustain</h2>
+      </Grid>
+
+      <Grid xs={12} style={{ marginBlockStart: '0.25em'}} classes={{ root: classes.callout }}>
+        <Paper>
+          <h2 className={classes.header}>
+            Meals Balance
+          </h2>
+          <h3 className={classes.subheader}>
+            2 meals
+          </h3>
+        </Paper>
+      </Grid>
+      <Grid xs={12} classes={{ root: classes.callout }}>
+        <Paper>
+          <h2 className={classes.header}>
+            Meals Redeemed To Date
+       </h2>
+          <h3 className={classes.subheader}>
+            16 meals
+       </h3>
+        </Paper>
+      </Grid>
+
       <Grid item xs={12}>
         <h2>
-          Redeem a Meal:
-     </h2>
+          Redeem a Meal
+        </h2>
       </Grid>
 
       <Grid className={classes.center} item xs={12}>
@@ -52,24 +87,7 @@ export function Dashboard() {
         <Fab variant="extended" aria-label="delete" className={classes.fab} onClick={handleClickVendors}>
           <RestaurantIcon className={classes.extendedIcon} />
           Find Vendors Near Me
-      </Fab>
-
-      </Grid>
-      <Grid item xs={12}>
-        <h2 className={classes.header}>
-          Meals Balance:
-      </h2>
-        <h3 className={classes.header}>
-          2 meals
-       </h3>
-      </Grid>
-      <Grid item xs={12}>
-        <h2 className={classes.header}>
-          Meals Redeemed To Date:
-       </h2>
-        <h3 className={classes.header}>
-          16 meals
-       </h3>
+        </Fab>
       </Grid>
     </Grid>
   );

@@ -5,25 +5,23 @@ import Typography from '@material-ui/core/Typography';
 import { FancyRadioButtons } from "../../../components/fancy-radio-buttons/FancyRadioButtons";
 import { CardMedia } from '@material-ui/core';
 
-const styles = 
+const styles =
 {
 
-media: {
-  height: '0',
-  paddingTop: '0', // 16:9,
-  marginTop:'0',
-  width: '0',
-}
-  };
+  media: {
+    height: '0',
+    paddingTop: '0', // 16:9,
+    marginTop: '0',
+    width: '0',
+  }
+};
 
 export function GetMap() {
-    return (
-      <>
-       <CardMedia style = {styles.media}>
-
-            <img src={'/static/img/Maps.png'} alt="recipe thumbnail"/>
-            
-        </CardMedia>
-      </>
-    )
-  }
+  return (
+    <>
+      <CardMedia style={styles.media}>
+        <img src={'/static/img/Maps.png'} alt="recipe thumbnail" />
+      </CardMedia>
+    </>
+  )
+}

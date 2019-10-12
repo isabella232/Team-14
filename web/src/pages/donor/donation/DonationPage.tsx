@@ -26,13 +26,20 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(1),
   },
   formControl: {
-          margin: theme.spacing(1),
-        },
-  center:{
-    textAlign: 'center'
+    margin: theme.spacing(1),
   },
-  header:{
+  removePadding: {
+    marginBottom: '0.2em',
+  },
+  header: {
     paddingTop: theme.spacing(1)
+  },
+  root: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignContent: 'center',
+    flexDirection: 'column',
+    textAlign: 'center',
   }
 }));
 
@@ -43,37 +50,38 @@ export function DonationPage() {
   const [cycleKind, setCycleKind] = useState(null as string | null);
 
   return (
-    <>
-      <h3 className ={classes.center}>Do you want to donate to your school?</h3>
+    <Grid container classes={{ root: classes.root }}>
+      <h3 className={classes.removePadding}>Do you want to donate to your school?</h3>
       <FormControl name="donate-school-group" component="fieldset" className={classes.formControl}>
         <RadioGroup aria-label="yes" name="donate-school" value={enableAlmaMater} onChange={(e) => setEnabledAlmaMater((e.target as HTMLInputElement).value === "true")}>
-        <Grid className={classes.center} item xs={12}>
-          <FormControlLabel 
-            value="true"
-            control={<Radio  color="primary" />}
-            label="Yes"
-          />
-          <FormControlLabel
-            value="false"
-            control={<Radio color="primary" />}
-            label="No"
-          />
+          <Grid item xs={12}>
+            <FormControlLabel
+              value="true"
+              control={<Radio color="primary" />}
+              label="Yes"
+            />
+            <FormControlLabel
+              value="false"
+              control={<Radio color="primary" />}
+              label="No"
+            />
           </Grid>
         </RadioGroup>
       </FormControl>
-      <h3 className ={classes.center}>The meal average cost in Chicago is $10</h3>
-      <h3 className ={classes.center}>How many meals do you want to donate?</h3>
-      <TextField> </TextField>
+      <h3 className={classes.removePadding}>The meal average cost in Chicago</h3>
+      <h2>$10</h2>
+      <h3 className={classes.removePadding}>How many meals do you want to donate?</h3>
+      <TextField type="number"></TextField>
 
-      <h3 className ={classes.center}>How would you like to donate?</h3>
+      <h3 className={classes.removePadding}>How would you like to donate?</h3>
       <FormControl name="donate-cycle-group" component="fieldset" className={classes.formControl}>
         <RadioGroup aria-label="Recuring" name="donate-cycle" value={cycleKind} onChange={(e) => setCycleKind((e.target as HTMLInputElement).value)}>
-          <FormControlLabel className ={classes.center}
+          <FormControlLabel
             value="recurring"
             control={<Radio color="primary" />}
             label="Recurring"
           />
-          <FormControlLabel className ={classes.center}
+          <FormControlLabel
             value="single"
             control={<Radio color="primary" />}
             label="One-time"
@@ -88,6 +96,6 @@ export function DonationPage() {
           onClick={(e) => history.push("/donor/payment")}>Donate Now!
         </Button>
       </div>
-    </>
+    </Grid>
   );
 }
