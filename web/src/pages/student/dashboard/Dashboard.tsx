@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import RestaurantIcon from '@material-ui/icons/Restaurant';
 import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
+import { getThemeProps } from '@material-ui/styles';
 const useStyles = makeStyles(theme => ({
   fab: {
     margin: theme.spacing(1),
@@ -14,6 +15,9 @@ const useStyles = makeStyles(theme => ({
   },
   center:{
     textAlign: 'center'
+  },
+  header:{
+    paddingTop: theme.spacing(2)
   }
 }));
 export function Dashboard() {
@@ -21,9 +25,9 @@ export function Dashboard() {
   return (
     <Grid className={classes.center} container={true}>
       <Grid item xs ={12}>
-      <Paper>
+      <h2>
        Redeem a Meal:
-     </Paper>
+     </h2>
       </Grid>
      
      <Grid className={classes.center} item xs={12}>
@@ -41,15 +45,22 @@ export function Dashboard() {
       </Fab>
       
      </Grid>
-     <Grid item xs={6}>
-     <Paper>
-       Meals Redeemed To Date: xxx meals
-      </Paper>
-      </Grid>
-      <Grid item xs={6}>
-       Meal Balance: xxx meals
+     <Grid item xs={12}>
+     <h2 className={classes.header}>
+       Meals Balance:
+      </h2>
+       <h2 className={classes.header}>
+       xxx meals
+       </h2>
        </Grid>
-
+      <Grid item xs={12}>
+      <h2 className={classes.header}>
+       Meals Redeemed To Date:
+       </h2>
+       <h2 className={classes.header}>
+       xxx meals
+       </h2>
+       </Grid>
 </Grid>
   );
 }
