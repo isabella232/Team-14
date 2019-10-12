@@ -37,7 +37,7 @@ const App: React.FC = () => {
         </Route>
 
         <Route path="/donor" exact={true}>
-          <DonorDashboard />
+          <DonationPage />
         </Route>
 
         <Route path="/donor/donate">
