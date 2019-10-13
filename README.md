@@ -10,3 +10,4 @@
  - Max Buffo (CS - 2nd Year)
  - S M Zawad Bin Zaki Sadaf (CS - 2nd Year)
  - Sean Graney(CS - 1st Year)
+ - Ritwik Divakaruni(CS - 4th Year)
